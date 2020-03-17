@@ -16,6 +16,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * 我项目里面有很多xml，我要求在spring容器加载完毕之后才去加载我们自己的xml
  * 
  * 你只需要些一个类去继承webApplicationContext/ApplicationContext 就可以了
+  测试git
  */
 @Configuration
 public class RedisConfig {
