@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录-华信智原教师签课时系统</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/keshi.js"></script>
+
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient,.gradient:hover{
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+
+<body>
+<header>
+    <div id="header-wrap">
+        <div id="header">
+            <h1>华信智原教师签课时系统v1.0</h1>
+        </div>
+    </div>
+</header>
+<main id="main-wrap">
+	<div id="container" class="clearfix">
+    	<div id="login-wrap">
+        	<div id="login-switch" class="clearfix">
+            	<a href="#" class="active">教师登录</a><a href="#">教务登录</a>
+            </div>
+            <div id="loginform">
+                <div id="login-teacher" class="login-form">
+                    <form name="teacher" method="post" action="">
+                        <div class="login-user">
+                            <input type="text" name="username" id="username" placeholder="输入用户名" autocomplete="off">
+                        </div>
+                        <div class="login-password">
+                            <input type="password" name="userpwd" id="userpwd" placeholder="输入6位数字的密码">
+                        </div>
+                        <div class="error-tips"><span class="error-message">用户名或者密码不正确</span></div>
+                        <div class="login-submit">
+                            <input type="submit" name="btn-login" id="btn-login" value="立即登录" class="gradient">
+                        </div>
+                    </form>
+                </div>
+                <div id="login-admin" class="login-form hide">
+                    <form name="admin" method="post" action="">
+                        <div class="login-user">
+                            <input type="text" name="adminname" id="adminname" placeholder="输入管理员账号" autocomplete="off">
+                        </div>
+                        <div class="login-password">
+                            <input type="password" name="adminpwd" id="adminpwd" placeholder="输入6位数字的密码">
+                        </div>
+                        <div class="error-tips"><span class="error-message">用户名或者密码不正确</span></div>
+                        <div class="login-submit">
+                            <input type="submit" name="btn-admin-login" id="btn-admin-login" value="立即登录" class="gradient">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer id="footer-wrap">
+	<div id="footer">
+    	<p>课时系统兼容IE9+、谷歌、火狐等现代浏览器，浏览器版本过低会影响用户体验</p>
+    	<p>Copyright @2018成都华信智原有限公司版权所有</p>
+        
+        <p>设计+前端开发：赵岚稹
+</p>
+	<p>后端开发：汪武斌</p>
+    </div>
+</footer>
+</body>
+</html>

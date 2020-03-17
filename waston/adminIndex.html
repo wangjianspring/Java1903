@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教师管理-华信智原教师签课时系统</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="js/kalendae/kalendae.css">
+<link rel="stylesheet" type="text/css" href="css/newkalendae.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/kalendae/kalendae.standalone.js"></script>
+<script type="text/javascript" src="js/keshi.js"></script>
+
+<!--包括IE9以及IE9以下的--> 
+<!--[if lte IE 9]>
+  <style>
+  	.select-wrap:after{
+    	display:none;}
+    .keshi-form select{
+    padding-right:1px;}
+  </style>
+<![endif]-->
+
+</head>
+
+<body>
+<header>
+    <div id="header-wrap">
+        <div id="header" class="header-neiye">
+            <h1>华信智原教师签课时系统v1.0</h1>
+        </div>
+    </div>
+</header>
+<main id="main-wrap">
+	<div id="container" class="clearfix neiye">
+    	<div id="admin-wrap" class="fl">
+            <div id="admin-teacher-head" class="clearfix">
+            	<div class="fr">
+                    <span class="buttons" id="addTeacher">添加新老师</span>
+                    <span class="buttons" id="viewAll">查看全部老师</span>
+                </div>
+                <!--添加新老师-->
+                <div class="change-wrap record-bg hide">
+                	<div class="addteacher-wrap  changeRecord">
+                    	<h3>添加新老师</h3>
+                    	<form name="addTeacher" method="post" action="">
+               		<div class="teacher">
+                    	<input type="text" name="teacherName" placeholder="姓名" id="newTeacher" autocomplete="off">
+                    </div>
+                    <div class="error-tips"><span class="error-message hide" id="newTeacher-name"></span></div>
+                    <div class="teacher career">
+                    	<div class="select-wrap">
+                            <select name="career">
+                            	<option>选择该老师所授专业</option>
+                                <option value="UI设计">UI设计</option>
+                                <option value="视觉交互设计">视觉交互设计</option>
+                                <option value="Java开发">Java开发</option>
+                                <option value="大数据精准营销">大数据精准营销</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="teacher">
+                    	<input type="password" name="teacherpwd" placeholder="输入新密码，6到12个字符或数字" id="newTeacherPwd1">
+                    </div>
+                    <div class="error-tips"><span class="error-message hide" id="newteacherpwd-message1">密码必须是6到12个字符或数字</span></div>
+                    
+                    <div class="teacher">
+                    	<input type="password" name="teacherpwd" placeholder="确认新密码保持一致" id="newTeacherPwd2">
+                    </div>
+                	<div class="error-tips"><span class="error-message hide" id="newteacherpwd-message2">两个新密码不一致</span></div>
+                    <div class="teacher">
+                    	<input type="submit" value="点击确认添加" class="btn-submit off" id="btn-teacherSubmit">
+                    </div>
+                </form>
+                		<i class="iconfont icon-close"></i>
+                    </div>
+                    
+                </div>
+            	<div id="searchTeacher" class="fr">
+                	<form name="searchTeacher" method="post" action="">
+                  <input type="text" placeholder="输入教师名字" id="teachername">
+                  <button type="button" id="btn-teacher"><i class="iconfont icon-search"></i></button>  
+                    </form>
+                </div>
+                
+            </div>
+            <div id="teacher-list">
+            	<div class="group">
+                	<h3>UI组</h3>
+                	<ul class="clearfix">
+                    	<li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/2.jpg"></a></div>
+                        	<div class="teachername"><a href="#">何艳 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/3.jpg"></a></div>
+                        	<div class="teachername"><a href="#">汪帆 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/4.jpg"></a></div>
+                        	<div class="teachername"><a href="#">刘勇 <span class="hide">隐藏</span></a></div>
+                        </li>
+                    </ul>
+                </div>
+            	<div class="group">
+                	<h3>Java组</h3>
+                	<ul class="clearfix">
+                    	<li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/2.jpg"></a></div>
+                        	<div class="teachername"><a href="#">何艳 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/3.jpg"></a></div>
+                        	<div class="teachername"><a href="#">汪帆 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/4.jpg"></a></div>
+                        	<div class="teachername"><a href="#">刘勇 <span class="hide">隐藏</span></a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="group">
+                	<h3>大数据组</h3>
+                	<ul class="clearfix">
+                    	<li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/2.jpg"></a></div>
+                        	<div class="teachername"><a href="#">何艳 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/3.jpg"></a></div>
+                        	<div class="teachername"><a href="#">汪帆 <span class="hide">隐藏</span></a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="group">
+                	<h3>python组</h3>
+                	<ul class="clearfix">
+                    	<li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/2.jpg"></a></div>
+                        	<div class="teachername"><a href="#">何艳 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="group">
+                	<h3>其他组</h3>
+                	<ul class="clearfix">
+                    	<li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/1.jpg"></a></div>
+                        	<div class="teachername"><a href="#">赵岚稹 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        <li>
+                        	<div class="touxiang"><a href="adminRecordList.html"><img src="images/touxiang/2.jpg"></a></div>
+                        	<div class="teachername"><a href="#">何艳 <span class="hide">隐藏</span></a></div>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <aside class="fr">
+        	<div id="slidebar" class="fr">
+                <div id="teacher-info">
+                    <div id="touxiang">
+                        <a href="#"><img src="images/touxiang.jpg" alt="管理员头像"></a></div>
+                    <h1 class="center">汪帆</h1>
+                </div>
+                <nav id="teacher-menu">
+                    <div id="menulist">
+                        <ul>
+                            <li><a href="adminIndex.html" class="active">教师信息管理</a></li>
+                            <li><a href="adminSchool.html" >教务教学管理</a></li>
+                            <li><a href="keshiCount.html" >课时统计管理</a></li>
+                            <li><a href="adminInfo.html">管理员管理</a></li>
+                             <li><a href="admindata.html">数据备份/恢复</a></li>
+                              <li><a href="index.html">退出管理系统</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+	</div>
+</main>
+<footer id="footer-wrap">
+	<div id="footer">
+    	<p>课时系统兼容IE9+、谷歌、火狐等现代浏览器，浏览器版本过低会影响用户体验</p>
+    	<p>Copyright @2018成都华信智原有限公司版权所有</p>
+        <p>课时系统兼容IE8+，以及谷歌、火狐等现代浏览器</p>
+        <p>设计+前端开发：赵岚稹
+</p>
+	<p>后端开发：汪武斌</p>
+    </div>
+</footer>
+<script>
+$(function(){
+	$('.icon-close').click(function(){
+		$('.record-bg').addClass('hide');
+		})
+	})
+</script>
+</body>
+</html>

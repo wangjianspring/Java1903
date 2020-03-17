@@ -1,0 +1,588 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>课时报表查看-华信智原教师签课时系统</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="js/kalendae/kalendae.css">
+<link rel="stylesheet" type="text/css" href="css/newkalendae.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/kalendae/kalendae.standalone.js"></script>
+<script type="text/javascript" src="js/keshi.js"></script>
+
+<!--包括IE9以及IE9以下的--> 
+<!--[if lte IE 9]>
+  <style>
+  	.select-wrap:after{
+    	display:none;}
+    .recordSelect-form select{
+    padding:6px 6px 6px 10px;}
+     .keshi-form select{
+    padding-right:1px;}
+  </style>
+<![endif]-->
+
+</head>
+
+<body>
+<header>
+    <div id="header-wrap">
+        <div id="header" class="header-neiye">
+            <h1>华信智原教师签课时系统v1.0</h1>
+        </div>
+    </div>
+</header>
+<main id="main-wrap">
+	<div id="container" class="clearfix neiye">
+    	<div id="recordList-wrap" class="fl">
+        	<!--选项卡切换菜单-->
+        	<div id="recordTitle">
+            	<nav>
+                	<ul class="clearfix">
+                    	<li class="active">待审核</li>
+                        <li>已通过</li>
+                        <li>已删除</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="recordList">
+            	<!--待审核课时-->
+            	<div class="check-wrap record-wrap">
+                    <div class="recordSelect clearfix">
+                        <div class="recordSelect-form fr">
+                            <form name="selectPage" method="post" action="">	
+                                <ul class="clearfix">
+                                    <li><div class="select-wrap">
+                                        <select name="selectPage-count">	
+                                           <option value="10">每页显示10条</option>  
+                                           <option value="20">每页显示20条</option>  
+                                           <option value="30">每页显示30条</option>  
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        for(var i=1;i<=12;i++){	
+                                          document.write(' <option value="'+(i<10?'0'+i:i)+'">'+(i<10?'0'+i:i)+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        var myDate=new Date();
+                                        var year=myDate.getFullYear();
+                                        for(var i=year;i>=2015;i--){	
+                                          document.write(' <option value="'+i+'">'+i+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="fr recordCount">
+                            7月共25条记录，预计<span>180</span>课时，<span>2</span>次值班
+                        </div>
+                    </div>
+                    <div class="recordList-table checkList">
+                        <table width="840" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <th scope="col">日期</th>
+                                  <th scope="col">星期</th>
+                                  <th scope="col">时间段</th>
+                                  <th scope="col">班级</th>
+                                  <th scope="col">地点</th>
+                                  <th scope="col">节数</th>
+                                  <th scope="col">备注</th>
+                                  <th scope="col">操作</th>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-1</td>
+                                  <td>日</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td>周末上课</td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-2</td>
+                                  <td>一</td>
+                                  <td>全天</td>
+                                  <td>大数据精准营销</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-3</td>
+                                  <td>二</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-4</td>
+                                  <td>三</td>
+                                  <td>8:45-11:50</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>4</td>
+                                  <td>下午请假</td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-5</td>
+                                  <td>四</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-6</td>
+                                  <td>五</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-9</td>
+                                  <td>一</td>
+                                  <td>全天</td>
+                                  <td>java1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-10</td>
+                                  <td>二</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td>值班</td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-11</td>
+                                  <td>三</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                                <tr>
+                                  <td>7-12</td>
+                                  <td>四</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                                  <td><a href="#" class="change">修改</a> <a href="#" class="del">删除</a></td>
+                              </tr>
+                            </table>
+                        <div class="pagebar center">
+                            <a href="#"class="current">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </div>
+                    </div>
+                </div>
+                <!--通过课时-->
+                <div class="pass-wrap record-wrap hide">
+                    <div class="recordSelect clearfix">
+                        <div class="recordSelect-form fr">
+                            <form name="selectPage" method="post" action="">	
+                                <ul class="clearfix">
+                                    <li><div class="select-wrap">
+                                        <select name="selectPage-count">	
+                                           <option value="10">每页显示10条</option>  
+                                           <option value="20">每页显示20条</option>  
+                                           <option value="30">每页显示30条</option>  
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        for(var i=1;i<=12;i++){	
+                                          document.write(' <option value="'+(i<10?'0'+i:i)+'">'+(i<10?'0'+i:i)+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        var myDate=new Date();
+                                        var year=myDate.getFullYear();
+                                        for(var i=year;i>=2015;i--){	
+                                          document.write(' <option value="'+i+'">'+i+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="fr recordCount">
+                            7月共25条记录，预计<span>180</span>课时，<span>2</span>次值班
+                        </div>
+                    </div>
+                    <div class="recordList-table checkList">
+                        <table width="840" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <th scope="col">日期</th>
+                                  <th scope="col">星期</th>
+                                  <th scope="col">时间段</th>
+                                  <th scope="col">班级</th>
+                                  <th scope="col">地点</th>
+                                  <th scope="col">节数</th>
+                                  <th scope="col">备注</th>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-1</td>
+                                  <td>日</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td>周末上课</td>
+                              </tr>
+                                <tr>
+                                  <td>7-2</td>
+                                  <td>一</td>
+                                  <td>全天</td>
+                                  <td>大数据精准营销</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr>
+                                  <td>7-3</td>
+                                  <td>二</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-4</td>
+                                  <td>三</td>
+                                  <td>8:45-11:50</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>4</td>
+                                  <td>下午请假</td>
+                              </tr>
+                                <tr>
+                                  <td>7-5</td>
+                                  <td>四</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr>
+                                  <td>7-6</td>
+                                  <td>五</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr>
+                                  <td>7-9</td>
+                                  <td>一</td>
+                                  <td>全天</td>
+                                  <td>java1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-10</td>
+                                  <td>二</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td>值班</td>
+                              </tr>
+                                <tr>
+                                  <td>7-11</td>
+                                  <td>三</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                                <tr>
+                                  <td>7-12</td>
+                                  <td>四</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                            </table>
+                        <div class="pagebar center">
+                            <a href="#"class="current">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </div>
+                    </div>
+                </div>
+                <!--删除课时-->
+                <div class="deleted-wrap record-wrap hide">
+                    <div class="recordSelect clearfix">
+                        <div class="recordSelect-form fr">
+                            <form name="selectPage" method="post" action="">	
+                                <ul class="clearfix">
+                                    <li><div class="select-wrap">
+                                        <select name="selectPage-count">	
+                                           <option value="10">每页显示10条</option>  
+                                           <option value="20">每页显示20条</option>  
+                                           <option value="30">每页显示30条</option>  
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        for(var i=1;i<=12;i++){	
+                                          document.write(' <option value="'+(i<10?'0'+i:i)+'">'+(i<10?'0'+i:i)+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                    <li><div class="select-wrap">
+                                        <select name="selectMonth">
+                                        <script>
+                                        var myDate=new Date();
+                                        var year=myDate.getFullYear();
+                                        for(var i=year;i>=2015;i--){	
+                                          document.write(' <option value="'+i+'">'+i+'</option>') 
+                                        }
+                                           </script>
+                                        </select>
+                                    </div></li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="fr recordCount">
+                            7月共25条记录，预计<span>180</span>课时，<span>2</span>次值班
+                        </div>
+                    </div>
+                    <div class="recordList-table checkList">
+                        <table width="840" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <th scope="col">日期</th>
+                                  <th scope="col">星期</th>
+                                  <th scope="col">时间段</th>
+                                  <th scope="col">班级</th>
+                                  <th scope="col">地点</th>
+                                  <th scope="col">节数</th>
+                                  <th scope="col">备注</th>
+                              </tr>
+                                <tr class="beizhu">
+                                  <td>7-1</td>
+                                  <td>日</td>
+                                  <td>全天</td>
+                                  <td>UI1802</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td>周末上课</td>
+                              </tr>
+                                <tr>
+                                  <td>7-2</td>
+                                  <td>一</td>
+                                  <td>全天</td>
+                                  <td>大数据精准营销</td>
+                                  <td>708</td>
+                                  <td>8</td>
+                                  <td></td>
+                              </tr>
+                            </table>
+                        <div class="pagebar center">
+                            <a href="#"class="current">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--修改课时-->
+            <div class="change-wrap record-bg hide">
+                    <div class="keshi-form changeRecord">
+                        <form name="changekeshi" method="post" action="">
+                    <table width="840" border="0" cellspacing="0" cellpadding="10">
+                <tr>
+                  <th>日期</th>
+                  <th>时间段</th>
+                  <th>班级</th>
+                  <th>地点</th>
+                  <th>节数</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td rowspan="2"><input type="text" id="select-date" name="select-date" class="auto-kal"  data-kal="mode:'multiple',format:'YYYY-MM-DD'" autocomplete="off"></td>
+                  <td>
+                  <div class="check">
+                  <input type="checkbox" id="allday" name="allday" value="allday"><label for="allday" id="allday-label"><span>全天</span></label>
+                  </div>
+                  </td>
+                  <td rowspan="2">
+                  <div class="select-wrap">
+                  <select id="select-class" name="select-class">
+              	<optgroup label="我的班级">
+                	<option value="UI1801">UI1801</option>
+                </optgroup>
+                <optgroup label="全部班级">
+                    <option value="UI1802">UI1802</option>
+                    <option value="UI1801">UI1801</option>
+                    <option value="前端1802">前端1802</option>
+                    <option value="大数据精准营销1802">大数据精准营销1802</option>
+                </optgroup>
+              </select>
+                  </div></td>
+                  <td rowspan="2">
+                  <div class="select-wrap">
+                  <select id="classroom" name="classroom">
+              	<optgroup label="我的教室">
+                	<option>602</option>
+                </optgroup>
+                <optgroup label="全部教室">
+                    <option>601</option>
+                    <option>602</option>
+                    <option>603</option>
+                    <option>604</option>
+                    <option>项目部二部</option>
+                    <option>701</option>
+                    <option>702</option>
+                    <option>软件开发二部</option>
+                 </optgroup>
+              </select>
+                  </div>
+                  </td>
+                  <td rowspan="2">
+                  <div class="select-wrap">
+                  <select id="count" name="count">
+              	<optgroup label="我的课时数">
+                	<option>8</option>
+                </optgroup>
+                <optgroup label="全部课时数">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </optgroup>
+              </select>
+                  </div></td>
+                  <td>
+                  <div class="check">
+                  <input type="checkbox" id="zhiban" name="zhiban" value="zhiban"><label for="zhiban"><span>值班</span></label>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="center">
+                  <div class="select-wrap">
+                  <select id="start-time" name="start-time">
+                    <option value="08:40">08:40</option>
+                    <option value="10:00">10:10</option>
+                    <option value="10:20">10:20</option>
+                    <option value="11:50">11:50</option>
+                  </select></div><span class="splite-time">到</span><div class="select-wrap"><select id="end-time" name="end-time">
+                    <option value="13:40">13:40</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="20:00">20:00</option>
+                  </select></div></td>
+                  <td><label for="beizhu"><span class="sub-info">其他信息请注明：</span></label><br><input type="text" id="beizhu" name="beizhu"></td>
+                </tr>
+              </table>
+              <div id="submit-wrap" class="center">
+                <input type="submit" value="点击确定" class="btn-submit">
+              </div>
+                </form>
+                        </div>
+                </div>
+            <!--删除课时-->
+            <div class="delete-wrap record-bg hide">
+                    <div class="deleteRecord center">
+                        <form name="delete" method="post"
+     action="">
+     						<p>确定删除该课时吗？</p>
+                            <input type="submit" id="btn-delete" name="btn-delete" value="确定">
+                            <input type="button" id="btn-cancel" value="取消">
+     
+     </form>                
+                    </div>
+                </div>
+      	</div>
+        <aside class="fr">
+        	<div id="slidebar" class="fr">
+                <div id="teacher-info">
+                    <div id="touxiang">
+                        <a href="#"><img src="images/touxiang.jpg" alt="教师头像"></a></div>
+                    <h1 class="center">赵岚稹</h1>
+                </div>
+                <nav id="teacher-menu">
+                    <div id="menulist">
+                        <ul>
+                            <li><a href="teacher.html" >实时课时签到</a></li>
+                            <li><a href="recordList.html" class="active" >课时签到报表</a></li>
+                            <li><a href="teacherInfo.html" >个人资料设置</a></li>
+                            <li><a href="javascript:;">退出课时系统</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+	</div>
+</main>
+<footer id="footer-wrap">
+	<div id="footer">
+    	<p>课时系统兼容IE9+、谷歌、火狐等现代浏览器，浏览器版本过低会影响用户体验</p>
+    	<p>Copyright @2018成都华信智原有限公司版权所有</p>
+        <p>课时系统兼容IE8+，以及谷歌、火狐等现代浏览器</p>
+        <p>设计+前端开发：赵岚稹
+</p>
+	<p>后端开发：汪武斌</p>
+    </div>
+</footer>
+</body>
+</html>

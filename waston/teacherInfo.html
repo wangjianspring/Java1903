@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教师个人信息-华信智原教师签课时系统</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="js/kalendae/kalendae.css">
+<link rel="stylesheet" type="text/css" href="css/newkalendae.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/kalendae/kalendae.standalone.js"></script>
+<script type="text/javascript" src="js/keshi.js"></script>
+
+<!--包括IE9以及IE9以下的--> 
+<!--[if lte IE 9]>
+  <style>
+  	.select-wrap:after{
+    	display:none;}
+    .keshi-form select{
+    padding-right:1px;}
+  </style>
+<![endif]-->
+
+</head>
+
+<body>
+<header>
+    <div id="header-wrap">
+        <div id="header" class="header-neiye">
+            <h1>华信智原教师签课时系统v1.0</h1>
+        </div>
+    </div>
+</header>
+<main id="main-wrap">
+	<div id="container" class="clearfix neiye">
+    	<div id="teacherInfo-wrap" class="fl">
+        	<div id="teacher-clear">
+                <h1>基本资料</h1>
+                <input type="button" value="清空预设签课时记录" name="btn-clearInfo" id="btn-clearInfo">
+                <span>备注：清空以前签课时的班级、教室等预设信息</span>
+            </div>
+            <!--确定清空预设-->
+            <div class="delete-wrap record-bg hide">
+                    <div class="deleteRecord center">
+                        <form name="clearInfo" method="post"
+     action="">
+     						<p>确定清空预设信息吗？</p>
+                            <input type="submit" id="btn-clear" name="btn-clear" value="确定">
+                            <input type="button" id="btn-cancel" value="取消">
+     
+     </form>                
+                    </div>
+                </div>
+            <div id="teacherInfo">
+            	<form name="teacherInfo" method="post" action="">
+               		<div class="teacher oldpwd">
+                    	<input type="password" name="teacherpwd" placeholder="输入原密码" id="oldpwd">
+                    </div>
+                    <div class="error-tips"><span class="error-message hide" id="newpwd-message">密码必须是6到12个字符或数字</span></div>
+                    <div class="teacher">
+                    	<input type="password" name="teacherpwd" placeholder="输入新密码，6到12个字符或数字" id="newpwd1">
+                    </div>
+                    <div class="error-tips"><span class="error-message hide" id="newpwd-message1">密码必须是6到12个字符或数字</span></div>
+                    
+                    <div class="teacher">
+                    	<input type="password" name="teacherpwd" placeholder="确认新密码保持一致" id="newpwd2">
+                    </div>
+                	<div class="error-tips"><span class="error-message hide" id="newpwd-message2">两个新密码不一致</span></div>
+                    <div class="teacher">
+                    	<input type="submit" value="点击确认修改" class="btn-submit off" id="btn-infoSubmit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <aside class="fr">
+        	<div id="slidebar" class="fr">
+                <div id="teacher-info">
+                    <div id="touxiang">
+                        <a href="#"><img src="images/touxiang.jpg" alt="教师头像"></a></div>
+                     <div class="changeImg"><a href="javascript:;" >修改头像</a></div>
+                    <h1 class="center">赵岚稹</h1>
+                </div>
+                <nav id="teacher-menu">
+                    <div id="menulist">
+                        <ul>
+                            <li><a href="teacher.html" >实时课时签到</a></li>
+                            <li><a href="recordList.html" >课时签到报表</a></li>
+                            <li><a href="teacherInfo.html" class="active">个人资料设置</a></li>
+                            <li><a href="javascript:;">退出课时系统</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+        <div class="changeAllWrap hide">
+            <div class="upload">
+                <form name="upload" method="post" action="">
+                    <input type="file" name="uploadPic" class="uploadPic"><span>(头像大小尺寸185px*185px)</span>
+                    <input type="submit" class="btn-submit" id="btn-upload" value="确定上传">
+                </form>
+                <i class="iconfont icon-close"></i>
+            </div>
+        </div>
+	</div>
+</main>
+<footer id="footer-wrap">
+	<div id="footer">
+    	<p>课时系统兼容IE9+、谷歌、火狐等现代浏览器，浏览器版本过低会影响用户体验</p>
+    	<p>Copyright @2018成都华信智原有限公司版权所有</p>
+        <p>课时系统兼容IE8+，以及谷歌、火狐等现代浏览器</p>
+        <p>设计+前端开发：赵岚稹
+</p>
+	<p>后端开发：汪武斌</p>
+    </div>
+</footer>
+</body>
+</html>

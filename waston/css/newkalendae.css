@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+.kalendae.k-floating{
+	-webkit-box-shadow:0 3px 15px rgba(0,0,0,.2);
+	-moz-box-shadow:0 3px 15px rgba(0,0,0,.2);
+	box-shadow:0 3px 15px rgba(0,0,0,.2);}
+.kalendae{
+	padding:20px;
+	font-size:12px;}
+.kalendae .k-calendar{
+	width:200px;}
+.kalendae .k-caption{
+	font-size:14px;}
+.kalendae .k-title, .kalendae .k-header, .kalendae .k-days{
+	width:200px;}
+.kalendae .k-header span{
+	padding:5px 0;
+	width:26px;}
+.kalendae .k-days span{
+	width:26px;
+	height:26px;
+	line-height:26px;
+	padding:0;
+	text-align:center;
+	}
+.kalendae .k-btn-close{
+	width:24px;
+	height:24px;
+	line-height:24px;
+	font-size:12px;
+	border-width:1px;
+	border-radius:50%;
+	-webkit-box-shadow:0 1px 10px rgba(0,0,0,.2);
+	-moz-box-shadow:0 1px 10px rgba(0,0,0,.2);
+	box-shadow:0 1px 10px rgba(0,0,0,.2);
+	}
+.kalendae .k-btn-previous-year:hover, .kalendae .k-btn-next-year:hover{
+	color:#7EA0E2;}

@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>签课时-华信智原教师签课时系统</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="js/kalendae/kalendae.css">
+<link rel="stylesheet" type="text/css" href="css/newkalendae.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/kalendae/kalendae.standalone.js"></script>
+<script type="text/javascript" src="js/keshi.js"></script>
+
+<!--包括IE9以及IE9以下的--> 
+<!--[if lte IE 9]>
+  <style>
+  	.select-wrap:after{
+    	display:none;}
+    .keshi-form select{
+    padding-right:1px;}
+  </style>
+<![endif]-->
+
+</head>
+
+<body>
+<header>
+    <div id="header-wrap">
+        <div id="header" class="header-neiye">
+            <h1>华信智原教师签课时系统v1.0</h1>
+        </div>
+    </div>
+</header>
+<main id="main-wrap">
+	<div id="container" class="clearfix neiye">
+    	<div class="keshi-form fl">
+        	<form name="keshi" method="post" action="">
+        		<table width="840" border="0" cellspacing="0" cellpadding="10">
+            <tr>
+              <th>日期</th>
+              <th>时间段</th>
+              <th>班级</th>
+              <th>地点</th>
+              <th>节数</th>
+              <th>备注</th>
+            </tr>
+            <tr>
+              <td rowspan="2"><input type="text" id="select-date" name="select-date" class="auto-kal"  data-kal="mode:'multiple',format:'YYYY-MM-DD'" autocomplete="off"></td>
+              <td>
+              <div class="check">
+              <input type="checkbox" id="allday" name="allday" value="allday"><label for="allday" id="allday-label"><span>全天</span></label>
+              </div>
+              </td>
+              <td rowspan="2">
+              <div class="select-wrap">
+              <select id="select-class" name="select-class">
+              	<optgroup label="我的班级">
+                	<option value="UI1801">UI1801</option>
+                </optgroup>
+                <optgroup label="全部班级">
+                    <option value="UI1802">UI1802</option>
+                    <option value="UI1801">UI1801</option>
+                    <option value="前端1802">前端1802</option>
+                    <option value="大数据精准营销1802">大数据精准营销1802</option>
+                </optgroup>
+              </select>
+              </div></td>
+              <td rowspan="2">
+              <div class="select-wrap">
+              <select id="classroom" name="classroom">
+              	<optgroup label="我的教室">
+                	<option>602</option>
+                </optgroup>
+                <optgroup label="全部教室">
+                    <option>601</option>
+                    <option>602</option>
+                    <option>603</option>
+                    <option>604</option>
+                    <option>项目部二部</option>
+                    <option>701</option>
+                    <option>702</option>
+                    <option>软件开发二部</option>
+                 </optgroup>
+              </select>
+              </div>
+              </td>
+              <td rowspan="2">
+              <div class="select-wrap">
+              <select id="count" name="count">
+              	<optgroup label="我的课时数">
+                	<option>8</option>
+                </optgroup>
+                <optgroup label="全部课时数">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </optgroup>
+              </select>
+              </div></td>
+              <td>
+              <div class="check">
+              <input type="checkbox" id="zhiban" name="zhiban" value="zhiban"><label for="zhiban"><span>值班</span></label>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="center">
+              <div class="select-wrap">
+              <select id="start-time" name="start-time">
+              	<option value="08:40">08:40</option>
+                <option value="10:00">10:10</option>
+                <option value="10:20">10:20</option>
+                <option value="11:50">11:50</option>
+              </select></div><span class="splite-time">到</span><div class="select-wrap"><select id="end-time" name="end-time">
+              	<option value="13:40">13:40</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+                <option value="20:00">20:00</option>
+              </select></div></td>
+              <td><label for="beizhu"><span class="sub-info">其他信息请注明：</span></label><br><input type="text" id="beizhu" name="beizhu"></td>
+            </tr>
+          </table>
+          <div id="submit-wrap" class="center">
+          	<input type="submit" value="点击确定" class="btn-submit" id="btn-listSubmit">
+          </div>
+         	</form>
+            <div class="info">
+            	<strong>温馨提示：</strong>
+                <p>1、日期可以多选，上课班级一致的课时可以多选日期实现一键签所有课时。</p>
+                <p>2、勾选全天后，上午下午的课时一起签。</p>
+                <p>3、如果当前上下午课时不一样，请当天单独选择时间段签课时。</p>
+            </div>
+      	</div>
+        <aside class="fr">
+        	<div id="slidebar" class="fr">
+                <div id="teacher-info">
+                    <div id="touxiang">
+                        <a href="#"><img src="images/touxiang.jpg" alt="教师头像"></a></div>
+                    <h1 class="center">赵岚稹</h1>
+                </div>
+                <nav id="teacher-menu">
+                    <div id="menulist">
+                        <ul>
+                            <li><a href="teacher.html" class="active" >实时课时签到</a></li>
+                            <li><a href="recordList.html" >课时签到报表</a></li>
+                            <li><a href="teacherInfo.html" >个人资料设置</a></li>
+                            <li><a href="javascript:;">退出课时系统</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+	</div>
+</main>
+<footer id="footer-wrap">
+	<div id="footer">
+    	<p>课时系统兼容IE9+、谷歌、火狐等现代浏览器，浏览器版本过低会影响用户体验</p>
+    	<p>Copyright @2018成都华信智原有限公司版权所有</p>
+        <p>课时系统兼容IE8+，以及谷歌、火狐等现代浏览器</p>
+        <p>设计+前端开发：赵岚稹
+</p>
+	<p>后端开发：汪武斌</p>
+    </div>
+</footer>
+</body>
+</html>
